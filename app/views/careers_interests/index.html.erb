@@ -1,0 +1,16 @@
+<div class="row">
+  
+  <div class="clear"></div>
+  <p id="notice"><%= notice %></p>
+  <ul class="thumbnails thumbnails-1 list-services">
+
+    <% @carrer_interests.each do |carrer_interest| %>
+      <li class="span4">
+      <div> 
+        <%= carrer_interest.name %>
+      </div>
+    </li>
+    <% end %>
+
+  </ul>
+</div>

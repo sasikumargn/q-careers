@@ -24,4 +24,4 @@ before_script:
 - "bundle exec rake assets:precompile || true"
 addons:
   code_climate:
-    repo_token: type_repo_token
+    repo_token: 7b3e1ab84f6ae6d397f2d1a09165a768180b9d7cb18bc4eff7ef36b43d9de701

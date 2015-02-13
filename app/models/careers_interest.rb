@@ -8,4 +8,10 @@ class CareersInterest < ActiveRecord::Base
       :if => proc {|user| user.email.present?}
   # Associtions
   has_one :attachment, :dependent => :destroy
+  accepts_nested_attributes_for :attachment, allow_destroy: true
+
+  def name
+  	"#{first_name} #{last_name}"
+  end
+  
 end

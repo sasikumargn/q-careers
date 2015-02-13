@@ -8,7 +8,7 @@ capybara-*.html
 /.bundle
 /vendor/bundle
 /vendor/.bundle
-/bin
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
