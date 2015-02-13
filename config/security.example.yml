@@ -1,0 +1,14 @@
+development:
+  SECRET_TOKEN: 'A long time ago, in a galaxy far, far away, It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.'
+
+test:
+  SECRET_TOKEN: 'A long time ago, in a galaxy far, far away, It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.'
+
+it:
+  SECRET_TOKEN: 'A long time ago, in a galaxy far, far away, It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.'
+
+staging:
+  SECRET_TOKEN: 'A long time ago, in a galaxy far, far away, It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.'
+
+production:
+  SECRET_TOKEN: 'A long time ago, in a galaxy far, far away, It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.'

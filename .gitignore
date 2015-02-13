@@ -1,0 +1,50 @@
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+
+# Ignore bundler config
+/.bundle
+/vendor/bundle
+/vendor/.bundle
+/bin
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sql
+
+/public/system/*
+/public/uploads/*
+/public/assets/*
+/coverage/
+/spec/tmp/*
+**.orig
+rerun.txt
+pickle-email-*.html
+
+# Ignore files - Needed in dev environment
+config/database.yml
+config/security.yml
+
+# For Mac
+*.DS_Store
+dump.rdb
+
+db/schema.rb
+.idea
+.rvmrc
+
+# Documentation
+doc/code_climate*
+doc/controller*
+db/wed-26-feb.sql
+
+# Ruby and Gemset
+.ruby-version
+
+# Capistrano
+.capistrano
