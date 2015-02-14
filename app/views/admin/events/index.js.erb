@@ -1,0 +1,12 @@
+<% if @events.any? %>
+	// Fill the right box with first event details in the list
+	$('#div_event_details').html("<%= escape_javascript(render(:partial=>'show')) %>");
+
+	// Rendering the item list
+	$('#div_event_index').html("<%= escape_javascript(render(:partial=>"index")) %>");
+	$('#div_event_drop_down').html("<%= escape_javascript(theme_drop_down(@events, :name)) %>");
+<% else %>
+	var noResultsText = "<%= escape_javascript(theme_panel_message(I18n.translate('forms.no_results')))%>";
+	$('#div_event_index').html(noResultsText);
+	$('#div_event_details').html(noResultsText);
+<% end %>

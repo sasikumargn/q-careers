@@ -1,53 +1,100 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
 
+# Database
 gem 'pg'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+# Development Server
+gem 'thin'
 
-# Use jquery as the JavaScript library
+# API / JSON Lib - For communicating with Q-Auth Server
+gem 'typhoeus'
+
+# Image Upload and manipulations
+gem 'carrierwave'
+gem 'fog'
+gem 'rmagick', :require => 'RMagick'
+gem 'jquery-fileupload-rails'
+
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.1.0'
+# gem 'therubyracer', platforms: :ruby
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'carrierwave'
+# Code Climate
+gem "codeclimate-test-reporter", group: :test, require: nil
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'q_auth_ruby_client', '~> 0.0.5'
+#gem 'q_auth_ruby_client', path: "/Users/kvarma/Projects/QwinixLabs/q-apps/q_auth_ruby_client"
+#gem 'poodle-rb', '~> 0.1.0'
+gem 'poodle-rb', path: "/Users/kvarma/Projects/QwinixLabs/q-apps/poodle"
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+# Poodle Dependencies
+gem "handy-css-rails", "0.0.7"
+gem "kaminari"
+gem "bootstrap-kaminari-views"
+gem "bootstrap-datepicker-rails"
+gem "jquery-validation-rails"
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+group :development do
+  gem "parallel_tests"
+  gem 'railroady'
+  gem 'capistrano'
+  gem 'capistrano-rails', '~> 1.1.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv', github: "capistrano/rbenv"
+  #gem 'capistrano-console'
+  #gem "capistrano-ext"
+  #gem "capistrano-deploytags"
+  #gem "brakeman", :require => false
+  #gem "hirb"
+end
+
+group :development, :test do
+  gem "factory_girl_rails"
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  #gem 'pry-debugger'
+  #gem "spork", "~> 1.0rc"
+  #gem "better_errors"
+  #gem "binding_of_caller"
+  gem 'rspec-rails', '~> 3.0' # Needed for rake stats to calculate test coverage
+  #gem "awesome_print"
+  gem "quiet_assets"
+end
+
+#gem 'rails_12factor', group: :production
+
+group :it, :staging, :development, :test, :uat, :production do
+  gem 'ruby-progressbar'
+  gem "colorize"
+end
+
+group :test do
+  gem "shoulda"
+  #gem 'cucumber-rails', :require => false
+  #gem 'cucumber-websteps'
+  #gem 'pickle'
+  gem 'capybara'
+  gem 'database_cleaner'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
-  gem 'rspec', '~> 3.2.0'
-  gem 'rspec-rails', '~> 3.0'
+  #gem 'rspec', '~> 3.2.0'
+  #gem 'rspec-rails', '~> 3.0'
 end
 

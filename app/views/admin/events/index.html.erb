@@ -1,0 +1,28 @@
+<%= theme_heading("Manage Events") %>
+
+<div class="row mb-10">
+	<div class="col-sm-6">
+		<%= theme_button('New Event', 'plus', main_app.new_admin_event_path) %>
+	</div>
+	<div class="col-sm-6">
+		<%= theme_search_form(Event, main_app.admin_events_path) %>
+  </div>
+</div>
+
+<%# Renders a partial to display all the events %>
+<div class="row">
+	<div id="div_event_index" class="col-sm-6 hidden-xs">
+		<%= render :partial=>"index" %>
+	</div>
+
+	<div id="div_event_drop_down" class="col-xs-12 visible-xs">
+		<%= theme_drop_down(@events, :name) %>
+	</div>
+
+	<div id="div_event_details" class="col-xs-12 col-sm-6">
+		<%= theme_detail_box(@events) %>
+	</div>
+
+</div>
+
+

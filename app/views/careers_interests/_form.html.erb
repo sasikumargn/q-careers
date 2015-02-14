@@ -1,43 +1,54 @@
-<%= form_for(@carrer_interest, :html => {
-           :role => "form",
-           :multipart => true}) do |f| %>
-  <% if @carrer_interest.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@carrer_interest.errors.count, "error") %> prohibited this video from being saved:
-      </h2>
-      <ul>
-      <% @carrer_interest.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for([main_app, @career_interest], :multipart => true, :html => {:id=>"form_career_interest", :class=>"mb-0 form-horizontal", :role => "form"}) do |f| %>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      New Career Interest
     </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+    <div class="panel-body" style="height:auto;">
 
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+      <div id="client_form_error">
+        <%= @career_interest.errors[:base].to_sentence %>
+      </div>
 
-    <%= f.label :city %>
-    <%= f.text_field :city %>
+      <div class="form-inputs mb-30 mt-30">
 
-    <%= f.label :state %>
-    <%= f.text_field :state %>
+        <%# First Name (string)  %>
+        <%= theme_form_field(@career_interest, :first_name) %>
 
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+        <%# Last Name (string)  %>
+        <%= theme_form_field(@career_interest, :last_name) %>
 
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
+        <%# Email (string)  %>
+        <%= theme_form_field(@career_interest, :email) %>
 
-    <%= f.label :skills %>
-    <%= f.text_field :skills %>
-    <%= f.fields_for :attachment do |builder| %>
-        <%= render 'attachment_fields', :f => builder %>
-    <% end %>
-  </div>
-  <div class="actions" style="margin-top:10px;">
-    <%= f.submit %>
+        <%# Skills (string)  %>
+        <%= theme_form_field(@career_interest, :skills) %>
+
+        <%# Phone (string)  %>
+        <%= theme_form_field(@career_interest, :phone) %>
+
+        <%# City (string)  %>
+        <%= theme_form_field(@career_interest, :city) %>
+
+        <%# State (string)  %>
+        <%= theme_form_field(@career_interest, :state) %>
+
+        <%# Resume (string)  %>
+        <%#= theme_form_field(@career_interest, :file) %>
+
+        <%# Description (string)  %>
+        <%#= theme_form_field(@career_interest, :description, required: false, html_options: {type: 'textarea'}) %>
+
+        <%#= theme_form_field(@career_interest, :description, html_options: {type: 'file'}) %>
+
+      </div>
+
+    </div>
+
+    <div class="panel-footer clearfix">
+      <div class="pull-right">
+        <%= theme_form_button(@career_interest) %>
+      </div>
+    </div>
   </div>
 <% end %>
