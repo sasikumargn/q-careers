@@ -17,7 +17,8 @@
 //= require poodle/common
 //= require poodle/utilities
 //= require poodle/photo_upload
-// For jQery validations - http://jqueryvalidation.org/documentation/
+//= require jquery.CarouFredSel
+// For jQuery validations - http://jqueryvalidation.org/documentation/
 //= require jquery.validate
 //= require jquery.validate.additional-methods
 // include validation init functions
